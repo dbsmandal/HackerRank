@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.mini-Max-Sum Hacker Rank </title>
+    <script>
+        let arr = [55, 10, 2, 9, 3, 21, 4,11, 5];
+
+        function mini_max_sum(data) {
+            let sum = data.reduce((a, b) => a + b);
+            console.log("totalsum",sum)
+            let maxVal = Math.max(...data);
+            let minVal = Math.min(...data);
+            console.log('maxvalue',maxVal)
+            console.log('minvalue',minVal)
+            console.log((sum - maxVal) + ' ' + (sum - minVal));
+        }
+        console.log(mini_max_sum(arr))
+    </script>
+</head>
+
+<body>
+    <script>
+        let array = [55, 2, 9, 3, 22, 4, 5];
+        function miniMaxSum(arr) {
+            // Write your code here
+            let sortArr = arr.sort((a, b) => { return a - b })
+            let maxNum = sortArr[sortArr.length - 1];
+            let minNum = sortArr[0];
+            let sum = 0;
+            for (let i = 0; i < sortArr.length; i++) {
+                sum += sortArr[i];
+            }
+            let maxSum = sum - minNum;
+            let minSum = sum - maxNum;
+            console.log(minSum + ' ' + maxSum);
+        }
+        console.log(miniMaxSum(array))
+    </script>
+
+</body>
+
+</html>
