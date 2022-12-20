@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Conversion</title>
+    <script>
+        function timeConversion(myTime) {
+            let time = myTime.substring(0, myTime.length - 2);
+            time = time.split(":").map(Number)
+            let AMPM = myTime.substring(myTime.length - 2)
+            console.log(time, AMPM, time[0]);
+            if (AMPM === "AM" && time[0] === 12) {
+                time[0] = 0
+            }
+            else if (AMPM === "PM" && time[0] === 12) {
+                time[0] = 12
+            }
+            else if (AMPM === "PM" && time[0] !== 12) {
+                time[0] = (time[0] + 12) % 24
+            }
+            return time.map(String).map(time => time.padStart(2, "0")).join(":")
+        }
+        let myTime1 = "09:00:45AM"
+        let myTime2 = "09:00:45PM"
+        let myTime3 = "12:00:45AM"
+        let myTime4 = "12:00:45PM"
+        let myTime5 = "01:00:00AM"
+
+        console.log(timeConversion(myTime1))
+        console.log(timeConversion(myTime2))
+        console.log(timeConversion(myTime3))
+        console.log(timeConversion(myTime4))
+        console.log(timeConversion(myTime5))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
