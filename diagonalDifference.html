@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [
+            [11, 2, 4,],
+            [4, 5, 6,],
+            [10, 8, -12]
+        ]
+        let arr = [
+            [11, 2, 4, 7],
+            [4, 5, 6, 9],
+            [10, 8, -12, 32],
+            [45, 8, -12, 54]
+
+        ]
+        // 0134
+        // 4310
+        // function diagonalDifference(data) {
+        //     let a1 = data[0];
+        //     let a2 = data[1];
+        //     let a3 = data[2];
+        //     let newArr = [...a1, ...a2, ...a3];
+        //     let len = newArr.length
+        //    let primarySum=newArr[0]+newArr[4]+newArr[8];
+        //    let secondarySum = newArr[2]+newArr[4]+newArr[6];
+        //    let diffrence=Math.abs(secondarySum-primarySum);
+        //    return diffrence;
+        // }
+        // console.log(diagonalDifference(arr))
+        function diagonalDifference(data) {
+            let a1 = data[0];
+            let a2 = data[1];
+            let a3 = data[2];
+            let a4=data[3]
+            let len = data.length
+            console.log(len)
+            // let primarySum=0;
+            // let secondarySum=0
+            console.log(len)
+            // let diffrence=0
+            // if (len == 4) {
+                 let primarySum = a1[0] + a2[1] + a3[2]+a4[3];
+                let  secondarySum = a1[3] + a2[2] + a3[1]+a4[0];
+                let diffrence = Math.abs(secondarySum - primarySum);
+            // }
+            // if (len == 2) {
+            //     let primarySum = a1[0] + a2[1] + a3[2];
+            //     let secondarySum = a1[2] + a2[1] + a3[0];
+            //     let diffrence = Math.abs(secondarySum - primarySum);
+               
+
+            // } 
+           
+
+            // return diffrence;
+            console.log("ssssss",diffrence)
+        }
+        console.log(diagonalDifference(arr))
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
