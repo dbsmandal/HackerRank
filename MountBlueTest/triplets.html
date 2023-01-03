@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function compareTriplets(a, b) {
+            let counta = 0;
+            let countb = 0;
+            for (let i = 0; i < a.length; i++) {
+                console.log(a[i], b[i]);
+                if (a[i] > b[i]) {
+                    counta++;
+                    continue;
+                }
+                if (b[i] > a[i]) {
+                    countb++;
+                    continue;
+                }
+            }
+            return [counta, countb]
+
+        }
+        console.log(compareTriplets([17, 28, 30], [99, 16, 8]))
+    </script>
+
+</body>
+
+</html>
