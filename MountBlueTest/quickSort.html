@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quickSort</title>
+</head>
+
+<body>
+    <script>
+        function quickSort(arr) {
+            // Write your code here
+          let p=arr[0];
+          let rigthArr=[];
+          let leftArr=[];
+
+          for(let i=1;i<arr.length;i++){
+            if(p<=arr[i]){
+                rigthArr.push(arr[i])
+            }else{
+                leftArr.push(arr[i])
+            }
+          }
+          console.log(rigthArr,leftArr)
+          return [...leftArr,p,...rigthArr]
+        }
+
+        console.log(quickSort([4, 5, 3, 2, 7]))
+    </script>
+
+</body>
+
+</html>
