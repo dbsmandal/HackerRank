@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zig Zag Sequence</title>
+</head>
+
+<body>
+    <script>
+        let arr = [2, 5, 4, 6, 8, 9, 7]
+
+        function zigzag(data) {
+            data.sort((a, b) => a - b);
+            console.log(data);
+
+
+        }
+
+        console.log(zigzag(arr))
+
+        let data1 = ["Dipak", "Rajesh", "Bikash", "Sankalp", "Deepak"]
+        function test(data1) {
+            data1.sort((a, b) => {
+                return a - b
+            })
+            return data1
+        }
+
+        console.log(test(data1))
+    </script>
+
+</body>
+
+</html>

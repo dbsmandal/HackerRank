@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.Breacking the Records</title>
+    <script>
+        let yourscore = [12, 24, 10, 24]
+        function breakingRecords(scores) {
+            let highScore=scores[0];
+            let lowScore=scores[0];
+            let countHigh= 0;
+            let countLow= 0;
+            for (let i = 1; i < scores.length; i++) {
+                if (scores[i] > highScore) {
+                    highScore = scores[i]
+                    countHigh++;
+                    continue;
+                }
+                if (scores[i] < lowScore) {
+                    lowScore = scores[i];
+                    countLow++;
+                    continue
+                }
+            }
+            return [countHigh, countLow]
+
+        }
+
+        console.log(breakingRecords(yourscore))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
