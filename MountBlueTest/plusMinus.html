@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus Minus </title>
+</head>
+
+<body>
+    <script>
+        let arr = [-4, 3, -9, 0, 4, 1]
+        function plusMinus(arr) {
+            // Write your code here
+            let posCount = 0;
+            let negCount = 0;
+            let zeroCount = 0;
+            let len = arr.length;
+
+            for (let i = 0; i < len; i++) {
+                if (arr[i] > 0) {
+                    posCount++;
+                }
+                if (arr[i] < 0) {
+                    negCount++;
+                }
+                if (arr[i] == 0) {
+                    zeroCount++;
+                }
+            }
+            let posRatio = (posCount / len).toFixed(6);
+            let negRatio = (negCount / len).toFixed(6);
+            let zeroRatio = (zeroCount / len).toFixed(6);
+
+            return console.log(posRatio + '\n' + negRatio + '\n' + zeroRatio)
+
+        }
+        console.log(plusMinus(arr))
+    </script>
+</body>
+
+</html>
