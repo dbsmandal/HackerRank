@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Reduce String</title>
+    <script>
+        let str = "aaabccddd";
+        function superReducedString(s) {
+            // Write your code here
+            let newstr = s.split("")
+            for (let i = 0; i < newstr.length; i++) {
+                if (newstr[i] === newstr[i + 1]) {
+                    newstr.splice(i, 2);
+                    i = -1
+                }
+            }
+            if (newstr.length === 0) {
+                return "Empty String"
+            } else {
+                return newstr.join("")
+            }
+        }
+        console.log(superReducedString(str))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
