@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Array Sum</title>
+    <script>
+        let ar = [2, 5, 4, 96, 2, 4];
+
+        //first way
+        function SimpleArraySum(ar) {
+            let sum = 0;
+            for (let i = 0; i < ar.length; i++) {
+                sum += ar[i]
+            }
+            return sum
+
+        }
+        console.log(SimpleArraySum(ar))
+
+        //another way
+        function SimpleArraySum2(ar) {
+            let sum = ar.reduce((a,b)=> a+b)
+            // let sum = ar.reduce((a,b)=> {
+            //     return a+b
+            // })
+
+            return sum
+        }
+        console.log(SimpleArraySum2(ar))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
