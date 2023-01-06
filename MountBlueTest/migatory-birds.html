@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let arr = [1, 4, 4, 4, 5, 3, 6, 4, 3]
+    function migratoryBirds(arr) {
+        // Write your code here
+        let sortArr = arr.sort()
+        let obj = {};
+        let maxInt = "";
+        for (let i = 0; i < sortArr.length; i++) {
+            let key = sortArr[i];
+            if (!obj[key]) {
+                obj[key] = 0;
+            }
+            obj[key]++;
+            if (maxInt == "" || obj[key] > obj[maxInt]) {
+                maxInt = key
+            }
+        }
+        return maxInt
+
+
+
+    }
+    console.log(migratoryBirds(arr))
+
+</script>
+
+<body>
+
+</body>
+
+</html>

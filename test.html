@@ -10,103 +10,29 @@
 
 <body>
     <script>
-        let arr = [
-            [11, 2, 4,],
-            [4, 5, 6,],
-            [10, 8, -12]
-        ]
-        function diagonalDifference(data) {
-            let a1 = data[0];
-            let a2 = data[1];
-            let a3 = data[2];
-            let len = data.length
-            // console.log(len)
-            let primarySum = a1[0] + a2[1] + a3[2]
-            let secondarySum = a3[0] + a2[1] + a1[2];
-            let diffrence = Math.abs(secondarySum - primarySum);
-            return diffrence;
-            // console.log("ssssss", diffrence)
-        }
-        console.log(diagonalDifference(arr));
-        let arr4 = [
-            [-1, 1, -7, -8],
-            [-10, -8, -5, -2],
-            [0, 9, 7, 1],
-            [4, 4, -2, 1],
+        let str = 'aaabccddd'
 
-        ]
+        function superReducedString(s) {
+            // Write your code here
+            let arr = s.split("")
+            let set = new Set();
 
-        function diagonalDifference4(data) {
-            let a1 = data[0];
-            let a2 = data[1];
-            let a3 = data[2];
-            let a4 = data[3]
-            let len = data.length
-            console.log(len)
-            let primarySum = a1[0] + a2[1] + a3[2] + a4[3];
-            let secondarySum = a1[3] + a2[2] + a3[1] + a4[0];
-            let diffrence = Math.abs(secondarySum - primarySum);
-            // return diffrence;
-            console.log("4444444", diffrence)
-        }
-        console.log(diagonalDifference4(arr4))
-
-
-        function test(data) {
-
-            let len = data.length;
-            let n = 3
-            console.log("len", len)
-            let primarySum = 0;
-            let secondarySum = 0
-
-            for (let i = 0; i < len; i++) {
-                if (len == 3) {
-                    primarySum = data[0][0] + data[1][1] + data[2][2];
-                    secondarySum = data[0][2] + data[1][1] + data[2][0]
-
-                } else if (len == 4) {
-                    primarySum = data[0][0] + data[1][1] + data[2][2] + data[3][3];
-                    secondarySum = data[0][3] + data[1][2] + data[2][1] + data[3][0]
+            for (ch of arr) {
+                if (set.has(ch)) {
+                    set.delete(ch);
+                } else {
+                    set.add(ch)
                 }
             }
-            let diffrence = Math.abs(secondarySum - primarySum);
-            return diffrence;
-            // console.log("test", diffrence)
-
-        }
-        console.log(test(arr4))
-        let arrN = [1, 2, 5, 3, 4]
-        function miniMaxSum(arr) {
-
-            let newArr = arr.sort()
-            let sum = 0;
-            let len = newArr.length
-            for (let i = 0; i < len; i++) {
-                sum += newArr[i]
+            let newStr = [...set].join("");
+            if (newStr.length === 0) {
+                return "Empty String"
+            } else {
+                return newStr;
             }
-            let minSum = sum - newArr[len - 1];
-            let maxSum = sum - newArr[0];
-            return [minSum, maxSum]
+
         }
-
-        console.log(miniMaxSum(arrN))
-
-        function staircase(n) {
-            // Write your code here
-
-            let line = "";
-            // for (let i = 0; i < n; i++) {
-            //     line +="*";
-            //         console.log(line) 
-            // }
-            for (let i = 0; i < n; i++) {
-                line +=" ";
-                console.log(line)    
-            }
-        }
-        console.log(staircase(6))
-
+        console.log(superReducedString(str))
 
 
 
