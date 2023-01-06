@@ -76,8 +76,21 @@
 
         }
         console.log(test(arr4))
+        let arrN = [1, 2, 5, 3, 4]
+        function miniMaxSum(arr) {
 
+            let newArr = arr.sort()
+            let sum = 0;
+            let len = newArr.length
+            for (let i = 0; i < len; i++) {
+                sum += newArr[i]
+            }
+            let minSum = sum - newArr[len - 1];
+            let maxSum = sum - newArr[0];
+            return [minSum, maxSum]
+        }
 
+        console.log(miniMaxSum(arrN))
 
 
 
