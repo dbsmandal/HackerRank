@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cake Candles || max value and Count</title>
+    <script>
+        let candles = [4, 1, 6, 4, 5, 6, 6, 2, 3];
+        function birthdayCakeCandles(candles) {
+            // Write your code here
+            let maxHeightCandle=Math.max(...candles);
+            let count=0;
+            // console.log(maxHeightCandle);
+            for(let i=0;i<candles.length;i++){
+                if(maxHeightCandle==candles[i]){
+                    count++;
+
+                }
+            }
+            return count;
+
+        }
+        console.log(birthdayCakeCandles(candles))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
