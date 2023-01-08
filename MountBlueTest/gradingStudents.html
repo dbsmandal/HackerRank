@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradingStudents</title>
+    <script>
+        let arr = [73, 67, 38, 33]
+        function gradingStudents(grades) {
+            // Write your code here
+            let result=[];
+            for(let i=0;i<grades.length;i++){
+                if(grades[i]>=38){
+                    let remaining=grades[i]%5;
+                    if(remaining===3){
+                        result.push(grades[i]+2)
+
+                    }else if(remaining==4){
+                        result.push(grades[i]+1)
+
+                    }else{
+                        result.push(grades[i])
+                    }
+                }else{
+                    result.push(grades[i])
+                }
+            }
+            return result
+           
+        }
+        console.log(gradingStudents(arr))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
