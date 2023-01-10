@@ -14,22 +14,34 @@
 
         function zigzag(data) {
             data.sort((a, b) => a - b);
-            console.log(data);
-
+            let mid = Math.floor(data.length / 2);
+            let zig = data.slice(0, mid)
+            let zag = data.slice(mid, data.length);
+            zag.reverse()
+            return [...zig, ...zag]
 
         }
 
         console.log(zigzag(arr))
 
-        let data1 = ["Dipak", "Rajesh", "Bikash", "Sankalp", "Deepak"]
-        function test(data1) {
-            data1.sort((a, b) => {
-                return a - b
-            })
-            return data1
-        }
+        // let data1 = ["Dipak", "Rajesh", "Bikash", "Sankalp", "Deepak"]
+        // function test(data1) {
+        //     data1.sort((a, b) => {
+        //         return a - b
+        //     })
+        //     return data1
+        // }
 
-        console.log(test(data1))
+        // console.log(test(data1))
+        function countingValleys(steps, path) {
+            // Write your code here
+            let steps = s.split("");
+            let valleyCount = 0;
+            let currentSeaLevel = 0;
+            let valleyStatus = false;
+            return valleyCount;
+        }
+        console.log(countingValleys("UDDDUDUU", 8))
     </script>
 
 </body>

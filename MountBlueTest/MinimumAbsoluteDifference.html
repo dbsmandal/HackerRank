@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Absolute Difference in Array</title>
+    <script>
+        let data = [0, -582, 5, 9];
+        //1 way
+        function minimumAbsoluteDifference(arr) {
+            // Write your code here
+            let tmp = [...arr.sort((a, b) => a - b)]
+            //Assume the min absolute value is the diff between the first pair
+            let min = Math.abs(tmp[0] - tmp[1])
+
+            //Compare with the next 'pair difference' to find the min'
+            for (let i = 1; i < tmp.length - 1; i++) {
+                if (Math.abs(tmp[i] - tmp[i + 1]) < min) {
+                    min = Math.abs(tmp[i] - tmp[i + 1])
+                }
+            }
+            return min
+
+        }
+
+        console.log(minimumAbsoluteDifference(data))
+
+
+//2nd way but on this some cases are not satisfy
+
+
+        function minimumAbsoluteDifference2(arr) {
+            // Write your code here
+            let diff = 0;
+            let result = []
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i+1; j < arr.length; j++) {
+                    diff = Math.abs(arr[i] - arr[j]);
+                    result.push(diff)
+                }
+
+            }
+            let minAbsDiff = Math.min(...result)
+            return minAbsDiff;
+
+
+
+        }
+        console.log(minimumAbsoluteDifference2(data))
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
