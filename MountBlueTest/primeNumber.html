@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <script>
+          let arr = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 25, 29, 30, 31, 38, 41];
+        function primeNumber(arr) {
+            let final = [];
+            let finalResult = [];
+            let matches = false;
+            for (let n of arr) {
+                for (let i = 2; i <= n - 1; i++)
+                    if (n % i == 0) {
+                        final.push(n);
+                        break;
+                    }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                matches = false;
+                for (let e = 0; e < final.length; e++) {
+                    if (arr[i] === final[e]) matches = true;
+                }
+                if (!matches) finalResult.push(arr[i]);
+            }
+            return finalResult;
+        }
+        console.log(primeNumber(arr));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

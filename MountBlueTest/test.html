@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 25, 29, 30, 31, 38, 41];
+        function primeNumber(arr) {
+            let final = [];
+            let finalResult = [];
+            let matches = false;
+            for (let n of arr) {
+                for (let i = 2; i <= n - 1; i++)
+                    if (n % i == 0) {
+                        final.push(n);
+                        break;
+                    }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                matches = false;
+                for (let e = 0; e < final.length; e++) {
+                    if (arr[i] === final[e]) matches = true;
+                }
+                if (!matches) finalResult.push(arr[i]);
+            }
+            return finalResult;
+        }
+        console.log(primeNumber(arr));
+
+        // function primeNumber(arr) {
+        //     arr.sort((a, b) => a - b)
+        //     let result = [];
+        //     let final = []
+        //     for (let n of arr) {
+        //         for (let j = 2; j < n; j++) {
+        //             // console.log("ccccccc",n)
+        //             if (n / j == 1 || n % j == 0) {
+        //                 // console.log("result1",result)
+        //                 result.push(n)
+        //                 // console.log("result2",result)
+        //             }
+        //         }
+        //     }
+
+        //     result = [...new Set(result)];
+        //     console.log(result, arr)
+
+        //     for (let num of arr) {
+        //         for (let num2 of result) {
+        //             if (num == result) {
+        //                 final.push(num)
+        //             }
+        //         }
+
+        //     }
+        //     for(let i=0;i<arr.length;i++){
+        //         if(!result[i]){
+        //             final.push(arr[i])
+        //         }
+        //     }
+        //     for(let j=0;j<arr.length;j++){
+        //         for( let i=0; i<result.length;i++){
+        //             if(result[i] ==arr[j]){
+        //                 arr.pop(result[i])
+        //             }
+        //         }
+        //     }
+
+        //     return final
+
+        // }
+        // console.log(primeNumber(arr));
+
+
+
+
+        // function checkPrime(n) {
+        //     let result=true
+        //      for ( let i = 2; i <= n - 1; i++)
+        //          if (n % i == 0) {
+        //              result = false;
+        //              break;
+        //          }
+
+        //         return result;
+
+        //  }
+
+        //  console.log("1",checkPrime( 1))
+        // console.log("2",checkPrime( 2))
+        // console.log("3",checkPrime( 3))
+        // console.log("4",checkPrime( 4))
+        // console.log("5",checkPrime( 5))
+        // console.log("6",checkPrime( 6))
+        // console.log("8",checkPrime( 8))
+        // console.log("9",checkPrime( 9))
+        // console.log("10",checkPrime( 10))
+        // console.log("11",checkPrime( 11))
+        // console.log("12",checkPrime( 12))
+        // console.log("13",checkPrime( 13))
+        // console.log("14",checkPrime( 14))
+        // console.log("15",checkPrime( 15))
+        // console.log("16",checkPrime( 16))
+        // console.log("17",checkPrime( 17));
+
+
+       
+
+
+
+        // function getMissing(a, b) {
+        //     var finalResult = [];
+        //     var matches = false;
+
+        //     for (var i = 0; i < a.length; i++) {
+        //         matches = false;
+        //         for (var e = 0; e < b.length; e++) {
+        //             if (a[i] === b[e]) matches = true;
+        //         }
+        //         if (!matches) finalResult.push(a[i]);
+        //     }
+        //     return finalResult;
+        // }
+        // console.log(getMissing([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 25, 29, 30, 31, 38, 41], [4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 21, 25, 30, 38]))
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
