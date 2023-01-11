@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countingValleys</title>
+    <script>
+
+        let steps = 8;
+        let path = 'UDDDUDUU';
+
+        function countingValleys(steps, path) {
+            // Write your code here            
+            let valleyCount = 0;
+            let seaLevel = 0;
+            let isSeaLevel = false;
+            for (let char of path) {
+                if (isSeaLevel = (char === 'U')) {
+                    seaLevel++
+                } else {
+                    seaLevel--
+                }
+
+                if (isSeaLevel && seaLevel === 0) {
+                    valleyCount++
+                }
+
+            }
+            return valleyCount
+        }
+
+        console.log(countingValleys(steps, path))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
