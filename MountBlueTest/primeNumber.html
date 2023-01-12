@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prime Number</title>
+    <p>if any number has atleast one factor which is less than or equal to its squareRoot then this number is non-prime
+        Number or composite number </p>
     <script>
-          let arr = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 25, 29, 30, 31, 38, 41];
+        let arr = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 25, 29, 30, 31, 38, 41];
+        // let arr = [54, 89, 61, 73, 99, 111, 125]
         function primeNumber(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 2; j <= Math.sqrt(arr[i]); j++) {
+                    if (arr[i] % j == 0) {
+                        delete arr[i]
+                    }
+                }
+            }
+            let prime = arr.filter((value) => {
+                return value !== undefined;
+            });
+
+            return prime
+        }
+        console.log(primeNumber(arr));
+
+
+        function test(numbers) {
+            let result = true;
+            for (let i = 2; i <= Math.sqrt(numbers); i++) {  //Time complexity O(sqrt(n))
+                if (numbers % i == 0) {
+                    result = false
+                }
+            }
+            return result
+        }
+        console.log(test(9))
+
+        let arr2 = [1, 8, 3, 4, 5, 6, 7, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 25, 29, 30, 31, 38, 41];
+        function primeNumber2(arr) {
             let final = [];
             let finalResult = [];
             let matches = false;
@@ -27,11 +60,13 @@
             }
             return finalResult;
         }
-        console.log(primeNumber(arr));
+        console.log(primeNumber2(arr2));
 
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
