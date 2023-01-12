@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Conversion</title>
+    <script>
+        function timeConversion(s) {
+            // Write your code here
+            let time = [...s.slice(0, s.length - 2).split(':')];
+            let PMAM = s.slice(s.length - 2, s.length);
+            time[0] = parseInt(time[0])
+            if (PMAM === "AM" && time[0] === 12) {
+                time[0] = 0
+            }
+            if (PMAM === "PM" && time[0] <= 11) {
+                time[0] += 12
+            }
+            time[0] = time[0].toString()
+            if (time[0].length === 1) {
+                time[0] = '0' + time[0]
+            }
+            return time.join(':')
+        }
+        console.log(timeConversion('02:20:00AM'))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
