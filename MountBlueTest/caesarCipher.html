@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caesarCipher</title>
+    <script>
+         function caesarCipher(s, k) {
+            // Write your code here
+            let encrypted = []
+            let smallAlpabet = 'abcdefghijklmnopqrstuvwxyz';
+            let capitalAlpabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let result=s.split("").map((char)=>{
+                if(smallAlpabet.includes(char)){
+                    return smallAlpabet[(smallAlpabet.indexOf(char)+k)%26]
+                }else if(capitalAlpabet.includes(char)){
+                    return capitalAlpabet[(capitalAlpabet.indexOf(char)+k)%26]
+                }else{
+                    return char
+                }
+            })
+      
+          
+            return result.join("")
+
+
+        }
+
+        console.log(caesarCipher('middle-Outz', 2))
+
+        // function caesarCipher(s, k) {
+        //     // Write your code here
+        //     let encrypted = []
+        //     let smallAlpabet = 'abcdefghijklmnopqrstuvwxyz';
+        //     let capitalAlpabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        //     for (let i = 0; i < s.length; i++) {
+        //         for (let j = 0; j < 25; j++) {
+        //             if (s[i] === smallAlpabet[j]) {
+        //                 let len = j + k;
+        //                 if (len >= 25) {
+        //                     len = len - 25;
+                        
+        //                     encrypted.push(smallAlpabet[len])
+
+        //                 } else {
+        //                     encrypted.push(smallAlpabet[len] )
+
+        //                 }
+
+        //             }else   if ( s[i] === capitalAlpabet[j]) {
+        //                 let len = j + k;
+        //                 if (len >= 25) {
+        //                     len = len - 25;
+                            
+        //                     encrypted.push( capitalAlpabet[len])
+
+        //                 } else {
+        //                     encrypted.push( capitalAlpabet[len])
+
+        //                 }
+
+        //             }
+        //         }
+
+        //     }
+        //     // encrypted.join()
+        //     // return encrypted
+        //     console.log(encrypted, 'okffng-Qwvb')
+
+
+        // }
+
+        // console.log(caesarCipher('middle-Outz', 2))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
