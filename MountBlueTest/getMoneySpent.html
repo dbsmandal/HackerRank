@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Shop || getMoneySpent</title>
+    <script>
+
+
+        function getMoneySpent(keyboards, drives, b) {
+            let sum = 0;
+            let arr = []
+            let result = 0;
+            for (let i = 0; i < drives.length; i++) {
+                for (let j = 0; j < keyboards.length; j++) {
+                    sum = drives[i] + keyboards[j];
+                    if (sum <= b) {
+                        arr.push(sum)
+                    }
+                }
+            }
+            result = Math.max(...arr);
+            return result > 0 ? result : -1
+        }
+        console.log("find -1 value", getMoneySpent([4], [4], 5))
+        console.log("find value", getMoneySpent([3, 1], [5, 2, 8], 10))
+
+        // not use ternary operator
+
+
+        function getMoneySpent(keyboards, drives, b) {
+            let arr = []
+            let result = 0;
+            for (let i = 0; i < drives.length; i++) {
+                for (let j = 0; j < keyboards.length; j++) {
+                    let sum = drives[i] + keyboards[j];
+                    if (sum <= b) {
+                        arr.push(sum)
+                    }
+                }
+            }
+            result = Math.max(...arr);
+            if (result > 0) {
+                return result
+            } else {
+                return -1
+            }
+        }
+        console.log("find -1 value", getMoneySpent([4], [4], 5))
+        console.log("find value", getMoneySpent([3, 1], [5, 2, 8], 10))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
