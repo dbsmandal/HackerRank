@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <p>
+        etters,s , having the following properties:
+
+        It is a concatenation of one or more words consisting of English letters.
+        All letters in the first word are lowercase.
+        For each of the subsequent words, the first letter is uppercase and rest of the letters are lowercase.
+        Given ,s determine the number of words in s .
+    </p>
+    <p>
+        example:s="saveChangesInTheEditor";
+
+
+        There are  words in the string: 'save', 'Changes', 'In','The','Editor'.
+        return 5
+    </p>
+    <script>
+        function camelcase(s) {
+            // Write your code here
+            let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let count = 1;
+            for (let i = 0; i < s.length; i++) {
+                for (let j = 0; j < upperCase.length; j++) {
+                    if (s[i] === upperCase[j]) {
+                        count++
+                    }
+                }
+            }
+            return count
+        }
+        console.log(camelcase("saveChangesInTheEditor"))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
