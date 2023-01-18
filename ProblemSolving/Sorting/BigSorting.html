@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Sorting</title>
+    <p>
+        bigSorting has the following parameter(s): string unsorted[n]: an unsorted array of integers as strings
+        Returns :: string[n]: the array sorted in numerical order
+    </p>
+    <script>
+        let unsorted = ["1", "200", "150", "3"];
+        //Return the array ['1', '3', '150', '200'].
+        function bigSorting(unsorted) {
+            // Write your code here
+            return unsorted.sort().sort((a,b)=>a.length-b.length)
+        }
+        //2nd way
+        function bigSorting(unsorted) {
+            // Write your code here
+            let sorted=unsorted.sort();
+            sorted.sort((a,b)=>a.length-b.length);
+            return sorted;
+        }
+//3rd way its  working but for long integers
+        function bigSorting(unsorted) {
+            // Write your code here
+            let arr=[];
+            for(let i=0;i<unsorted.length;i++){
+                arr.push(parseInt(unsorted[i]));
+            }
+            arr.sort((a,b)=>a-b);
+            let result=arr.map(String);
+            return result;
+        }
+        console.log(bigSorting(unsorted))
+
+
+      
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
