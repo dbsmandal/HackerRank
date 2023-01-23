@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jumpingOnClouds</title>
+    <script>
+        function jumpingOnClouds(c, k) {
+            let e = 100;
+            let index = 0
+            let n = c.length
+            for (let i = 0; i < Infinity; i = i + k) {
+                index = (index + k) % n
+                if (c[index] == 1) {
+                    e = e - 3;
+
+                } else {
+                    e = e - 1;
+
+                }
+                if (i + k > n - 1 && (i + k) % n === 0 || e === 0) {
+                    break;
+                }
+
+            }
+            return e
+
+
+        }
+console.log(jumpingOnClouds([0, 0 ,1, 0 ,0, 1 ,1 ,0],2))
+console.log(jumpingOnClouds([1, 1 ,1 ,0 ,1 ,1 ,0 ,0, 0 ,0],3))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
