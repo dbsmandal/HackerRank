@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beautifulDays</title>
+    <script>
+        function beautifulDays(i, j, k) {
+            // Write your code here
+            let count = 0
+            for (let start = i; start <= j; start++) {
+                let rStart = parseInt(start.toString().split("").reverse().join(""))
+                let dif = Math.abs(start - rStart)
+                if (dif % k == 0) {
+                    count++
+                }
+            }
+            return count
+        }
+        console.log(beautifulDays(20, 23, 6))
+    </script>
+      // let n = start.toString()
+      // let reverseVal = n.split("").reverse().join("");
+      // let reverseStart = parseInt(reverseVal)
+      // console.log(reverseStart)
+</head>
+
+<body>
+
+</body>
+
+</html>
