@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minimumDistances</title>
+    <script>
+        function minimumDistances(a) {
+            // Write your code here
+            let result = []
+            for (let i = 0; i < a.length; i++) {
+                for (let j = i + 1; j < a.length; j++) {
+                    if (a[i] === a[j]) {
+                        result.push(Math.abs(i - j))
+                    }
+                }
+            }
+            if (result.length===0) {
+                return -1
+            }
+            return Math.min(...result)
+        }
+        console.log(minimumDistances([7, 1, 3, 4, 1, 7]))
+        console.log(minimumDistances([1, 2, 3, 4, 10]))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
