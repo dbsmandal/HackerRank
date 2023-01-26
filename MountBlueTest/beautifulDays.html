@@ -10,7 +10,7 @@
         function beautifulDays(i, j, k) {
             // Write your code here
             let count = 0
-            for (let start = i; start <= j; start++) {
+            for (let start = i;  start <= j; start++) {
                 let rStart = parseInt(start.toString().split("").reverse().join(""))
                 let dif = Math.abs(start - rStart)
                 if (dif % k == 0) {
