@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countApplesAndOranges</title>
+    <script>
+        function countApplesAndOranges(s, t, a, b, apples, oranges) {
+            // Write your code here
+            let appleCount = 0;
+            let orrangeCount = 0;
+            for (let i = 0; i < apples.length; i++) {
+                if ((apples[i] + a) >= s && (apples[i] + a) <= t) {
+                    appleCount++
+                }
+            }
+            for (let i = 0; i < oranges.length; i++) {
+                if ((oranges[i] + b) >= s && (oranges[i] + b) <= t) {
+                    orrangeCount++
+                }
+            }
+            console.log(`${appleCount}\n${orrangeCount} `)
+        }
+        console.log(countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]))
+
+        //another way
+
+        function countApplesAndOranges2(s, t, a, b, apples, oranges) {
+            // Write your code here
+            let appleCount = apples.reduce((count, value) => (value + a >= s && value + a <= t) ? count + 1 : count, 0)
+            let orrangeCount = oranges.reduce((count, value) => (value + b >= s && value + b <= t) ? count + 1 : count, 0)
+
+            console.log(`${appleCount}\n${orrangeCount} `)
+        }
+        console.log(countApplesAndOranges2(7, 11, 5, 15, [-2, 2, 1], [5, -6]))
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
