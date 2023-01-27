@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getTotalX</title>
+</head>
+
+<body>
+    <script>
+        function getTotalX(a, b) {
+            // Write your code here
+            let count = 0;
+            for (let i = 0; i < 1000; i++) {
+                if (a.every(value => (i % value == 0))) {
+                    if (b.every(value => (value % i == 0))) {
+                        count++
+                    }
+                }
+            }
+            return count
+
+
+        }
+        console.log(getTotalX([2, 6], [24, 36]))
+    </script>
+</body>
+
+</html>
