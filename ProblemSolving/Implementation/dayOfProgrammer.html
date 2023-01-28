@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dayOfProgrammer</title>
+    <script>
+        function dayOfProgrammer(year) {
+            // Write your code here
+            if (year == 1918) {
+                return `${26}.${"09"}.${year} `
+            } else if (year > 1918) {
+                if (year % 400 == 0 || year % 4 == 0 && year % 100 !== 0) {
+                    return `${12}.${"09"}.${year} `
+                } else {
+                    return `${13}.${"09"}.${year} `
+                }
+            } else {
+                if (year % 4 == 0) {
+                    return `${12}.${"09"}.${year} `
+                } else {
+                    return `${13}.${"09"}.${year} `
+                }
+            }
+        }
+
+        console.log(dayOfProgrammer(2017))
+        console.log(dayOfProgrammer(1984))
+        console.log(dayOfProgrammer(1800))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
