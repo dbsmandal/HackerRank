@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pageCount</title>
+    <script>
+        function pageCount(n, p) {
+            // Write your code here
+            if (p === n - 1 && n % 2 === 0 && n > 2) return 1;
+            return Math.floor(Math.min(p / 2, n / 2 - p / 2));
+        }
+        console.log("1", (pageCount(6, 2)));
+        console.log("0", (pageCount(5, 4)));
+        console.log("0", (pageCount(2, 2)));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
