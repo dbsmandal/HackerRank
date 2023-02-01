@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeInWors</title>
+    <script>
+        function timeInWords(h, m) {
+            // Write your code here
+            const num = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+                'eleven', 'twelve', 'thirteen', 'fourteen', 'quarter', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty',
+                'twenty one', 'twenty two', 'twenty three', 'twenty four', 'twenty five', 'twenty six', 'twenty seven',
+                'twenty eight', 'twenty nine', 'half']
+
+            let pastto = ' past '
+            let oclock = ''
+
+            if (m > 30) m = 60 - m, h++, pastto = ' to '
+            if (m == 0) pastto = '', oclock = ' o\' clock'
+            let min = (m == 0) ? '' : num[m]
+            if (m % 15) min += ((m == 1) ? ' minute' : ' minutes')
+
+            return min + pastto + num[h] + oclock
+        }
+        console.log(timeInWords(5, 47))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
