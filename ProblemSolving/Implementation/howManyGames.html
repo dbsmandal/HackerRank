@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>howManyGames</title>
+    <script>
+        function howManyGames(p, d, m, s) {
+            // Return the number of games you can buy
+            let buy=0;
+            let budget=0;
+            
+            while(1){
+                //initiali budget=budget+p
+                budget=budget+p;
+                if(budget<=s){
+                    //if budget lesthan given budget s,buy continue
+                    buy++;
+                    if(p-d>=m){
+                        //if budget+p is equal or lessthan m then p=p-d
+                        p=p-d
+                    }else{
+                        //when budget+p lessthan m then p=m and buy continue
+                        p=m
+                    }
+                }else{
+                    //when budget+p is over s then loop break
+                    break;
+                }
+            }
+            return buy
+
+        }
+        console.log(howManyGames(20, 3, 6, 80))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
