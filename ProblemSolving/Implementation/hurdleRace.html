@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hurdleRace</title>
+    <script>
+        function hurdleRace(k, height) {
+    // Write your code here
+    let arr=[];
+    for(let i=0;i<height.length;i++){
+        if(height[i]>k){
+            arr.push(height[i])
+        }
+    }
+   let maxHurdle=Math.max(...arr);
+   let result=maxHurdle-k
+   if(arr.length===0){
+       return 0
+   }else{
+       return result
+   }
+    
+
+}
+console.log(hurdleRace(4,[1 ,6 ,3 ,5 ,2]))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
