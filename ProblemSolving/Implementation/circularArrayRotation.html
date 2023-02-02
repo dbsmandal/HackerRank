@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function circularArrayRotation(a, k, queries) {
+            // Write your code here
+            let count = 1;
+            let result = [];
+            while (count <= k) {
+                let lastEl = a.pop();
+                a.unshift(lastEl);//pusl last removedelent in fisrt index
+                count++
+            }
+            for (let i = 0; i < queries.length; i++) {
+                let el = a[queries[i]];
+                result.push(el)
+            }
+            return result
+        }
+        console.log(circularArrayRotation([3,4,5],2,[1,2]))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
