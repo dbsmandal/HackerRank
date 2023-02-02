@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chocolateFeast</title>
+    <script>
+        function chocolateFeast(n, c, m) {
+            // Write your code here
+            let chocolate = Math.floor(n / c);
+            let wraper = Math.floor(n / c);
+            while (wraper >=m) {
+               chocolate +=Math.floor(wraper/m)
+               wraper=Math.floor(wraper/m)+(wraper%m)
+            }
+
+            return chocolate
+        }
+        console.log("expected 6", chocolateFeast(10, 2, 5))
+        console.log("expected 3", chocolateFeast(12, 4, 4))
+        console.log("expected 5", chocolateFeast(6, 2, 2))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
