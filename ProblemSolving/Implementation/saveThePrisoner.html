@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saveThePrisoner</title>
+    <script>
+        function saveThePrisoner(n, m, s) {
+            // Write your code here
+            let prisoner = (m + s - 1) % n;
+            if (prisoner == 0) {
+                prisoner = n;
+            }
+            return prisoner
+        }
+
+        console.log(saveThePrisoner(5, 2, 1))//2
+        console.log(saveThePrisoner(5, 2, 2))//3
+//
+        function saveThePrisoner(n, m, s) {
+            return (s - 1 + (m % n)) % n == 0 ? n : (s - 1 + (m % n)) % n;
+        }
+//
+
+function saveThePrisoner(n, m, s) {
+ 	m=m%n;
+
+	let result=(s+(m-1))%n;
+	return result==0?n:result;
+}
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
