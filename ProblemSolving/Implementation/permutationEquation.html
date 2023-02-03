@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>permutationEquation</title>
+    <script>
+        function permutationEquation(p) {
+            // Write your code here
+            let arr = [];
+            let x = 1;
+            let y;
+
+            while (x <= p.length) {
+                for (let i = 0; i < p.length; i++) {
+                    if (p[i] == x) {
+                        y = i + 1;
+                        break
+                    }
+                }
+                for (let i = 0; i < p.length; i++) {
+                    if (p[i] == y) {
+                        y = i + 1
+                        break
+                    }
+                }
+                arr.push(y)
+                x++;
+            }
+            return arr
+        }
+        console.log(permutationEquation([4, 3, 5, 1, 2]))
+
+        //another way
+
+
+        function permutationEquation2(p) {
+            let result = p.map((d, e) => p.indexOf(p.indexOf(e + 1) + 1) + 1);
+            return result;
+        }
+        console.log(permutationEquation2([4, 3, 5, 1, 2]))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
