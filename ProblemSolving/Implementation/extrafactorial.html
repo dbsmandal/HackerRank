@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>extra factorial</title>
+    <script>
+        function extraLongFactorials(n) {
+            // Write your code here
+            let result = BigInt(n);
+
+            for (let i = n - 1; i > 1; i--) {
+                result *= BigInt(i);
+            }
+
+           return result.toString()
+        }
+        console.log(extraLongFactorials(25));
+        console.log(extraLongFactorials(1));
+        console.log(extraLongFactorials(5));
+        console.log(extraLongFactorials(0));
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
