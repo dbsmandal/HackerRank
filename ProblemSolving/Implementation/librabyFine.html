@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Fine</title>
+    <script>
+        function libraryFine(d1, m1, y1, d2, m2, y2) {
+            // Write your code here
+            if (y2 < y1) {
+                return `${10000}`
+            } else if (m2 < m1 && y1 == y2) {
+                let diff = m1 - m2
+                return `${500 * diff}`
+            } else if (d2 < d1 && m1 == m2 && y1 == y2) {
+                let diff = d1 - d2
+                return `${15 * diff}`
+            } else {
+                return `${0}`
+            }
+        }
+console.log(libraryFine(14,7,2018,5,7,2018))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
