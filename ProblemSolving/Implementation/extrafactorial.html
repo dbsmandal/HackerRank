@@ -7,6 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>extra factorial</title>
     <script>
+//
+function extraLongFactorials(n) {
+    // Write your code here
+    let result = 1
+    for (let i = 2; i <= n; i++) {
+        result = BigInt(result)
+        i = BigInt(i)
+        result = result * i
+    }
+    console.log(result.toString())
+}
+
+console.log(extraLongFactorials(40));
+console.log(extraLongFactorials(45));
+console.log(extraLongFactorials(24));
+
         function extraLongFactorials(n) {
             // Write your code here
             let result = BigInt(n);
