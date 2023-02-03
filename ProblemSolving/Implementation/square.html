@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>square</title>
+    <script>
+       
+
+
+        function squares(a, b) {
+            // Write your code here
+            let start = Math.ceil(Math.sqrt(a));
+            let end = Math.floor(Math.sqrt(b))
+            let count = end - start + 1
+            return count
+        }
+        console.log("3", squares(35, 70))
+
+        console.log("22", squares(100, 1000))
+
+ function squares(a, b) {//in this time complexcity very high 
+            // Write your code here
+            let count = 0;
+            for (let i = a; i <= b; i++) {
+                let numbers=Math.sqrt(i)
+                if (Number.isInteger(numbers)) {
+                    count++
+                }
+            }
+            return count
+        }
+        console.log(squares(24,50))
+        console.log(squares(24, 50))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
