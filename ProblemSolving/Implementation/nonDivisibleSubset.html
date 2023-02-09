@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function nonDivisibleSubset(k, s) {
+            // Write your code here
+            let remArr = new Array(k).fill(0)
+            console.log(remArr)
+            for (let val of s) {
+                remArr[val % k] = remArr[val % k] + 1
+            }
+            console.log(remArr)
+
+            // let result = [];
+            // for (let i = 0; i <= s.length; i++) {
+            //     for(let j=i+1;j<s.length;j++){
+            //         if ((s[i] + s[j])%k == 1 && (s[i] + s[j])%k !== 0) {
+            //         result.push(s[i], s[j])
+            //     }
+            //     }
+
+            // }
+            // let res= [...new Set(result)]
+            // return res.length
+        }
+        console.log(nonDivisibleSubset(3, [1, 7, 2, 4]))
+        console.log(nonDivisibleSubset(7, [
+            278, 576, 496, 727,
+            410, 124, 338, 149,
+            209, 702, 282, 718,
+            771, 575, 436
+        ]))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
