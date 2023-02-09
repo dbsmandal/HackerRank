@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+  function cutTheSticks(arr) {
+            // Write your code here
+           let result=[];
+           while(arr.length>0){
+            result.push(arr.length);
+            let min=Math.min(...arr)
+            arr=arr.map((elem)=>elem-min);
+            arr=arr.filter((item)=>item>0)
+           }
+           return result
+        }
+
+        console.log(cutTheSticks([5, 4, 4, 2, 8])) 
+
+
+
+        function cutTheSticks2(arr) {
+            // Write your code here
+            let sortarr = arr.sort((a, b) => a - b);
+            let result = [];
+            let min = sortarr[0];
+            result.push(sortarr.length)
+            for (let i = 0; i < sortarr.length; i++) {
+                if (sortarr[i] > min) {
+                    min = sortarr[i];
+                    result.push(sortarr.length - i)
+                }
+            }
+            return result
+
+        }
+
+        console.log(cutTheSticks2([5, 4, 4, 2, 8])) 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
