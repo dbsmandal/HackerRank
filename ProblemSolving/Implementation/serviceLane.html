@@ -7,6 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+     function serviceLane2(n, cases, width) {
+            // Write your code here
+            let result = [];
+            for (let j = 0; j < cases.length; j++) {
+               result.push(Math.min(...width.slice(cases[j][0],cases[j][1]+1)))
+            }
+            return result
+        }
+        console.log(serviceLane2(8, [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]], [2, 3, 1, 2, 3, 2, 3, 3]));
+
+
+
+
+
+
+
+
+
+
+
+
+//another way
+
         function serviceLane(n, cases, width) {
             // Write your code here
             let result = [];
@@ -20,6 +43,10 @@
             return result
         }
         console.log(serviceLane(8, [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]], [2, 3, 1, 2, 3, 2, 3, 3]));
+//another way
+
+
+
 
     </script>
 </head>
