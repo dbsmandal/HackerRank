@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function serviceLane(n, cases, width) {
+            // Write your code here
+            let result = [];
+            for (let j = 0; j < cases.length; j++) {
+                let minNum = Infinity;
+                for (let k = cases[j][0]; k <= cases[j][1]; k++) {
+                    minNum = Math.min(minNum, width[k])
+                }
+                result.push(minNum)
+            }
+            return result
+        }
+        console.log(serviceLane(8, [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]], [2, 3, 1, 2, 3, 2, 3, 3]));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
