@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function acmTeam(topic) {
+            // Write your code here
+            let arr = []
+            for (let i = 0; i < topic.length; i++) {
+                for (let j = i + 1; j < topic.length; j++) {
+                    let count = 0;
+                    for (let k = 0; k < topic[0].length; k++) {
+                        if (topic[i][k] === '1' || topic[j][k] === '1') {
+                            count++
+                        }
+                    }
+                    arr.push(count)
+                }
+            }
+            let maximum = arr.sort((a, b) => b - a)[0];
+            let maximumCount = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (maximum == arr[i]) {
+                    maximumCount++
+                }
+            }
+            return [maximum, maximumCount]
+        }
+        console.log(acmTeam([ '11101', '10101', '11001', '10111', '10000', '01110' ]))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
