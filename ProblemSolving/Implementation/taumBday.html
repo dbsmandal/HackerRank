@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function taumBday(b, w, bc, wc, z) {
+            // Write your code here
+            b = BigInt(b)
+            w = BigInt(w)
+            bc = BigInt(bc)
+            wc = BigInt(wc)
+            z = BigInt(z)
+
+            if (bc > wc + z) {
+                let result = (b + w) * wc + b * z
+                return result
+            } else if (wc > bc + z) {
+                let result = (b + w) * bc + w * z
+                return result
+            } else {
+                let result = b * bc + w * wc
+                return result
+            }
+        }
+        console.log(taumBday(3, 5, 3, 4, 1))
+        console.log(taumBday(10, 10, 1, 1, 1))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
