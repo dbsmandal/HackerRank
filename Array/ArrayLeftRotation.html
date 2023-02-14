@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function rotLeft2(arr, d) {
+            for (let i = 0; i < d; i++) {
+                arr.push(arr.shift());
+            }
+            return arr
+        }
+        console.log(rotLeft2([1, 2, 3, 4, 5],4))
+        //with whileloop
+
+
+        function rotLeft(a, d) {
+            // Write your code here
+            let firstEl;
+            let x = 0
+            while (x < d) {
+                firstEl = a.shift();
+                a.push(firstEl);
+                x++
+            }
+            return a;
+        }
+        console.log(rotLeft([1, 2, 3, 4, 5], 4))
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
