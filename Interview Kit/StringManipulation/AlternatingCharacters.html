@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternating Characters</title>
+
+</head>
+
+<body>
+    <script>
+        function alternatingCharacters(s) {
+            // Write your code here
+            let deletCount = 0;
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === s[i + 1]) {
+                    deletCount++
+                }
+            }
+            return deletCount
+        }
+        console.log(alternatingCharacters("AAAA"))//3
+        console.log(alternatingCharacters("BBBBB"))//4
+        console.log(alternatingCharacters("ABABABAB"))//0
+        console.log(alternatingCharacters("BABABA"))//0
+        console.log(alternatingCharacters("AAABBB"))//4
+
+    </script>
+    ans
+    <img src="alternatchar2.JPG" alt="">
+    <img src="alernetchar.JPG" alt="">
+
+</body>
+
+</html>
