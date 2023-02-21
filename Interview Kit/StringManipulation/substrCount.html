@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>substrCount</title>
+    <script>
+
+        function substrCount(n, s) {
+
+            let arr = [...s];
+            let count = 0;
+            for (let i = 0; i < n; i++) {
+                let start = arr[i];
+                for (let j = 0; j < n - i; j++) {
+                    if (arr[i + j] === start) {
+                        count++;
+                        continue;
+                    }
+                    if (n > i + j + j) {
+                        let pos1=i + j + 1;
+                        let pos2=i + 2 * j + 1
+                        if (arr.slice(pos1, pos2).every(substr => substr === start)) {
+                            count++;
+                        }
+                    }
+                    break;
+                }
+            }
+            return count;
+        }
+        console.log(substrCount(7, 'abcbaba'))//10
+        console.log(substrCount(4, 'aaaa'))//10
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
