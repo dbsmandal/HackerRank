@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherlock and the Valid String</title>
+    <script>
+        function isValid(s) {
+            // Write your code here
+            let obj = {};
+            for (let i = 0; i < s.length; i++) {
+                let key = s[i]
+                if (!obj[key]) {
+                    obj[key] = 0;
+                }
+                obj[key]++;
+            }
+            let arr = (Object.values(obj)).sort((a, b) => a - b);
+            let fastEl = arr[0];
+            let secondEl = arr[1];
+            let lastEl = arr[arr.length - 1];
+            let secondLastEl = arr[arr.length - 2];
+            if (arr.length == 1) {
+                return "YES"
+            }
+            if (fastEl == lastEl) {
+                return "YES"
+            }
+            if (fastEl == 1 && secondEl == lastEl) {
+                return "YES"
+            }
+            if (fastEl == secondEl && secondEl == secondLastEl && secondLastEl + 1 == lastEl) {
+                return "YES"
+            } else {
+                return "NO"
+            }
+        }
+        console.log(isValid('aaaabbcc'))//no
+        console.log(isValid('aabbcd'))//no
+        console.log(isValid('aabbccddeefghi'))//no
+        console.log(isValid('abcdefghhgfedecba'))//yes
+        console.log(isValid('a'))//yes
+        console.log(isValid('ibfdgaeadiaefgbhbdghhhbgdfgeiccbiehhfcggchgghadhdhagfbahhddgghbdehidbibaeaagaeeigffcebfbaieggabcfbiiedcabfihchdfabifahcbhagccbdfifhghcadfiadeeaheeddddiecaicbgigccageicehfdhdgafaddhffadigfhhcaedcedecafeacbdacgfgfeeibgaiffdehigebhhehiaahfidibccdcdagifgaihacihadecgifihbebffebdfbchbgigeccahgihbcbcaggebaaafgfedbfgagfediddghdgbgehhhifhgcedechahidcbchebheihaadbbbiaiccededchdagfhccfdefigfibifabeiaccghcegfbcghaefifbachebaacbhbfgfddeceababbacgffbagidebeadfihaefefegbghgddbbgddeehgfbhafbccidebgehifafgbghafacgfdccgifdcbbbidfifhdaibgigebigaedeaaiadegfefbhacgddhchgcbgcaeaieiegiffchbgbebgbehbbfcebciiagacaiechdigbgbghefcahgbhfibhedaeeiffebdiabcifgccdefabccdghehfibfiifdaicfedagahhdcbhbicdgibgcedieihcichadgchgbdcdagaihebbabhibcihicadgadfcihdheefbhffiageddhgahaidfdhhdbgciiaciegchiiebfbcbhaeagccfhbfhaddagnfieihghfbaggiffbbfbecgaiiidccdceadbbdfgigibgcgchafccdchgifdeieicbaididhfcfdedbhaadedfageigfdehgcdaecaebebebfcieaecfagfdieaefdiedbcadchabhebgehiidfcgahcdhcdhgchhiiheffiifeegcfdgbdeffhgeghdfhbfbifgidcafbfcd'))//yes
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
