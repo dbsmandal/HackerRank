@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Anagram string</title>
+    <script>
+        function makeAnagram(a, b) {
+            // Write your code here
+            let obj = {};
+            let count = 0;
+            for (let char of a) {
+                if (!obj[char]) {
+                    obj[char] = 1
+                } else {
+                    obj[char]++
+
+                }
+            }
+            for (let char of b) {
+                if (!obj[char]) {
+                    count++
+                } else {
+                    obj[char]--
+
+                }
+            }
+            let arr = (Object.values(obj));
+            for (let num of arr) {
+                count += num
+            }
+            return count
+        }
+
+        console.log(makeAnagram('fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke'))
+        console.log(makeAnagram("showman", "woman"))
+        console.log(makeAnagram("abc", "cde"))
+        console.log(makeAnagram("abc", "bcd"))
+        console.log(makeAnagram("abfhfc", "bcfd"))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
