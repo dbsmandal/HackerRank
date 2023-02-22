@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting: Bubble Sort </title>
+    <script>
+        function countSwaps(a) {
+            // Write your code here
+            let swaped = 0;
+            for (let i = 0; i < a.length; i++) {
+                for (let j = i + 1; j < a.length; j++) {
+                    if (a[i] > a[j]) {
+                        swaped++;
+                        let temp = a[i];
+                        a[i] = a[j];
+                        a[j] = temp
+                    }
+                }
+            }
+
+            console.log(`Array is sorted in ${swaped} swaps.`)
+            console.log(`First Element: ${a[0]}`)
+            console.log(`Last Element: ${a[a.length - 1]}`)
+
+
+
+        }
+
+        console.log(countSwaps([6, 4, 1]));
+        console.log(countSwaps([1, 2, 3]));
+        console.log(countSwaps([3, 2, 1]));
+
+
+        function countSwaps2(a) {
+            // Write your code here
+            let swaped = 0;
+            for (let i = 0; i < a.length; i++) {
+                for (let j = i + 1; j < a.length; j++) {
+                    if (a[i] > a[j]) {
+                        swaped++;
+                        [a[i], a[j]] = [a[j], a[i]]
+                    }
+                }
+            }
+
+            console.log(`Array is sorted in ${swaped} swaps.`)
+            console.log(`First Element: ${a[0]}`)
+            console.log(`Last Element: ${a[a.length - 1]}`)
+
+
+
+        }
+
+        console.log(countSwaps2([6, 4, 1]));
+        console.log(countSwaps2([1, 2, 3]));
+        console.log(countSwaps2([3, 2, 1]))
+
+        function countSwaps3(a) {
+            // Write your code here
+            let swaped;
+            let count=0;
+            do{swaped=false;
+                for(let i=0;i<a.length;i++){
+                    if(a[i]>a[i+1]){
+                        count++;
+                        [a[i],a[i+1]]=[a[i+1],a[i]];
+                        swaped=true
+                    }
+                }
+
+            } while(swaped);
+
+            console.log(`Array is sorted in ${count} swaps.`)
+            console.log(`First Element: ${a[0]}`)
+            console.log(`Last Element: ${a[a.length - 1]}`)
+
+
+        }
+
+        console.log(countSwaps3([6, 4, 1]));
+        console.log(countSwaps3([1, 2, 3]));
+        console.log(countSwaps3([3, 2, 1]))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
