@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function commonChild(s1, s2) {
+            // Write your code here
+            const s1Len = s1.length;
+            const s2Len = s2.length;
+            const res = Array.from({ length: s1Len + 1 }).map((_) =>
+                Array.from({ length: s2Len + 1 }).fill(0)
+            );
+            for (let i = 1; i <= s1Len; i++)
+                for (let j = 1; j <= s2Len; j++) {
+                    if (s1[i - 1] === s2[j - 1]){
+                        res[i][j] = res[i - 1][j - 1] + 1;
+                    }
+                    else{
+                        res[i][j] = Math.max(res[i][j - 1], res[i - 1][j]);
+                    }
+                }
+
+            return res[s1Len][s2Len];
+        }
+        // console.log(commonChild('HARRY', 'SALLY'))
+        console.log(commonChild('SHINCHAN', 'NOHARAAA'))
+        // console.log(commonChild('AA', 'BB'))
+        // console.log(commonChild('ABCD', 'ABDC'))
+
+        // function commonChild2(s1, s2) {
+        //     // Write your code here
+        //     let prev = Array(s2.length + 1).fill(0), curr = [...prev];
+        //     [...s1].forEach(r => {
+        //         [...s2].forEach((v, i) => curr[i + 1] = (r == v) ? prev[i] + 1 : Math.max(prev[i + 1], curr[i]));
+        //         [prev, curr] = [curr, prev];
+        //     })
+        //     return prev.pop()
+        // }
+        // console.log(commonChild2('HARRY', 'SALLY'))
+        // console.log(commonChild2('SHINCHAN', 'NOHARAAA'))
+        // console.log(commonChild2('AA', 'BB'))
+        // console.log(commonChild2('ABCD', 'ABDC'))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
