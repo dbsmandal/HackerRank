@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Toys</title>
+    <script>
+        //given an array and target ;
+        //find how many array of element added target equal or les
+        //all elemnt store in array and return array length
+        function maximumToys(prices, k) {
+            // Write your code here
+            let sortPrices = prices.sort((a, b) => a - b);
+            let result=[];
+            let sum=0;
+            for(let el of sortPrices){
+                sum +=el;
+                if(sum<=k){
+                    result.push(el)
+                }
+            }
+            return result.length
+
+        }
+
+        console.log(maximumToys([1, 12, 5, 111, 200, 1000, 10], 50));
+        console.log(maximumToys([3, 7, 2, 9, 4], 15))
+        console.log(maximumToys([1, 2, 3, 4], 7))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
