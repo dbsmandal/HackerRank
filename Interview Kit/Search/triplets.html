@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //this only sour test casses pass
+        function triplets(a, b, c) {
+            a = [...new Set(a.sort((a, b) => a - b))]
+            b = [...new Set(b.sort((a, b) => a - b))]
+            c = [...new Set(c.sort((a, b) => a - b))]
+
+            let pairs = 0;
+            let arr = []
+            for (let i = 0; i < a.length; i++) {
+                for (let j = 0; j < b.length; j++) {
+                    if (a[i] <= b[j]) {
+                        for (let k = 0; k < c.length; k++) {
+                            if (b[j] >= c[k]) {
+                                pairs++;
+                                arr.push([a[i], b[j], c[k]])
+                            }
+                        }
+                    }
+
+                }
+            }
+            console.log(arr)
+            return pairs
+        }
+        console.log(triplets([1,3,5,7],[5,7,9],[7,9,11,13]))//12
+        console.log(triplets([1,4,5],[2,3,3],[1,2,3]))//5
+        console.log(triplets([1,3,5],[2,3],[1,2,3]))//8
+
+
+    </script>
+
+</body>
+
+</html>
