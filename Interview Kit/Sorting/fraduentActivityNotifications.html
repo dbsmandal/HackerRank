@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function activityNotifications(expenditure, d) {
+            // Write your code here
+            let notifications = 0;
+            let median = 0;
+            let dArr = []
+            let len = expenditure.length - d;
+            for (let i = 0; i < len; i++) {
+                for (let j = i; j < d + i; j++) {
+                    dArr.push(expenditure[j])
+                }
+                dArr.sort((a,b)=>a-b)
+                let midIndex = Math.floor(d / 2);
+                if (d % 2 != 0) {
+                    median = dArr[midIndex]
+                } else {
+                    median = (dArr[midIndex] + dArr[midIndex - 1]) / 2
+                }
+                // console.log(`dArr is ${dArr} \n  median is ${median} \n expenditure[d + i] is ${expenditure[d + i]} \n median*2 is ${median * 2}`)
+                dArr = []
+                if (expenditure[d + i] >= median * 2) {
+                    notifications += 1
+                }
+            }
+
+            return notifications
+        }
+        console.log(activityNotifications([2, 3, 4, 2, 3, 6, 8, 4, 5], 5))
+        // console.log(activityNotifications([10, 20, 30, 40, 50], 3))
+        // console.log(activityNotifications([1, 2, 3, 4, 4], 4))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
