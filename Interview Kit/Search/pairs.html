@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Given an array of integers and a target value, determine the number of pairs of array elements that have a difference equal to the target value.
+
+
+        function pairs(k, arr) {
+            // Write your code here
+            let pair = 0;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length; j++) {
+                    if (arr[i] - arr[j] == k) {
+                        pair++;
+                    }
+                }
+            }
+            return pair
+        }
+        console.log(pairs([1, 2, 3, 4]))
+
+
+        function pairs2(k, arr) {
+            // Write your code here
+            let pair = 0;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (Math.abs(arr[i] - arr[j]) == k) {
+                        pair++;
+                    }
+                }
+            }
+            return pair
+        }
+        console.log(pairs2([1, 2, 3, 4]))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
