@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sherlockAndAnagrams</title>
+    <script>
+        function sherlockAndAnagrams(s) {
+            // Write your code here
+
+            // let substrArr = [];
+            // let count=0;
+            // for (let i = 0; i < s.length; i++) {
+            //     for (let j = i + 1; j < s.length + 1; j++) {
+            //         let subStr = s.slice(i, j)
+            //         subStr = subStr.split('').sort((a, b) => a.localeCompare - b.localeCompare).join('');
+            //         substrArr.push(subStr)
+
+            //     }
+            // }
+            // for(let i=0;i<substrArr.length;i++){
+            //     for(let j=i+1;j<substrArr.length;j++){
+            //         let str1=substrArr[i];
+            //         let str2=substrArr[j]
+
+            //         if(str1===str2){
+            //             count++;
+            //         }
+            //     }
+            // }
+            // return count
+
+            let count = 0;
+	let subStrings = [];
+	for (let i = 0; i < s.length; i++) {
+		for (let k = i + 1; k < s.length + 1; k++) {
+			let subString = s.slice(i, k);
+			subString = subString
+				.split("")
+				.sort((a, b) => a.localeCompare(b))
+				.join("");
+			subStrings.push(subString);
+		}
+	}
+	for (let i = 0; i < subStrings.length; i++) {
+		for (let k = i + 1; k < subStrings.length; k++) {
+			let str1 = subStrings[i];
+			let str2 = subStrings[k];
+			if (str1 === str2) {
+				count++;
+			}
+		}
+	}
+	return count;
+        }
+        console.log(sherlockAndAnagrams('mom'))
+
+        console.log(sherlockAndAnagrams('abba'))
+        console.log(sherlockAndAnagrams('abcd'))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
