@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Given two strings, determine if they share a common substring. A substring may be as small as one character.
+    </title>
+    <script>
+        // Given two strings, determine if they share a common substring. A substring may be as small as one character.
+        function commonChar(s1, s2) {//all test case passes
+            for (let i = 0; i < s2.length; i++) {
+                if (s1.includes(s2[i])) {
+                    return 'YES';
+                }
+            }
+            return 'NO';
+        }
+        console.log(commonChar('hello', 'world'))
+        console.log(commonChar('hi', 'world'))
+        console.log(commonChar('and', 'art'))
+
+
+        function twoStrings2(s1, s2) {//all test case passed
+            // Write your code here
+            let obj1 = {};
+            let obj2 = {}
+            for (let char of s1) {
+                if (!obj1[char]) {
+                    obj1[char] = 0;
+                }
+                obj1[char]++
+            }
+            for (let char of s2) {
+                if (!obj2[char]) {
+                    obj2[char] = 0;
+                }
+                obj2[char]++
+            }
+            let keys1 = Object.keys(obj1);
+            let keys2 = Object.keys(obj2)
+
+            for (let i = 0; i < keys1.length; i++) {
+                if (keys1.includes(keys2[i])) {
+                    return "YES";
+                    break;
+                }
+            }
+
+            return "NO"
+        }
+        console.log(twoStrings2('hello', 'world'))
+        console.log(twoStrings2('hi', 'world'))
+        console.log(twoStrings2('and', 'art'))
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
