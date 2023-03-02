@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkMagazine</title>
+    <script>
+        //         Harold is a kidnapper who wrote a ransom note, but now he is worried it will be traced back to him through his handwriting. He found a magazine and wants to know if he can cut out whole words from it and use them to create an untraceable replica of his ransom note. The words in his note are case-sensitive and he must use only whole words available in the magazine. He cannot use substrings or concatenation to create the words he needs.
+
+        // Given the words in the magazine and the words in the ransom note, print Yes if he can replicate his ransom note exactly using whole words from the magazine; otherwise, print No.
+        // input1
+        // magazine='give me one grand today night';
+        // note='give one grand today'
+        //output "Yes"
+
+
+        // input2
+        // magazine='two times three is not four';
+        // note='two times two is four'
+        //output "No" because in note two is 2times but in magazine two is 1 times
+
+        // input3
+        // magazine='attack at dawn';
+        // note='Attack at dawn'
+        //output "No" beacuase attack!==Attack
+
+
+        function checkMagazine2(magazine, note) {
+            let magazineObj = {};
+            magazine = magazine.split(' ');//ass per given condition this two line of need in vs code but not need in browser
+            note = note.split(' ')
+
+            for (let word of magazine) {
+                if (!magazineObj[word]) {
+                    magazineObj[word] = 0
+                }
+                magazineObj[word]++
+            }
+            // console.log(magazineObj)
+            for (let word of note) {
+                if (!magazineObj[word]) {
+                    console.log("No");
+                    return;
+                }
+                magazineObj[word]--
+            }
+            console.log("Yes")
+
+        }
+
+        console.log(checkMagazine2('two times three is not four', 'two times two is four'))
+        console.log(checkMagazine2('give me one grand today night', 'give one grand today'))
+        console.log(checkMagazine2('attack at dawn', 'Attack at dawn'))
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
