@@ -11,19 +11,21 @@
         function subArrSum(arr, m) {
             let subArr = [];
             let reslt = [];
-            let sum=0
+            let sum = 0
             for (let i = 0; i <= arr.length - 1; i++) {
                 for (let j = arr.length - 1; j >= i; j--) {
                     subArr.push(arr.slice(i, j + 1))
                 }
             }
-            console.log(subArr)
+            // console.log(subArr)
             for (let i = 0; i < subArr.length; i++) {
                 let sum = 0;
                 for (let j = 0; j < subArr[i].length; j++) {
                     sum += subArr[i][j]
                 }
-                    reslt.push(sum%m)
+                reslt.push(sum % m)
+                console.log(`sum is ${sum} \n sum%m is ${sum % m}`)
+
             }
             return Math.max(...reslt)
         }

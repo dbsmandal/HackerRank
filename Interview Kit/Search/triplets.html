@@ -35,10 +35,25 @@
             console.log(arr)
             return pairs
         }
-        console.log(triplets([1,3,5,7],[5,7,9],[7,9,11,13]))//12
-        console.log(triplets([1,4,5],[2,3,3],[1,2,3]))//5
-        console.log(triplets([1,3,5],[2,3],[1,2,3]))//8
-
+        console.log(triplets([1, 3, 5, 7], [5, 7, 9], [7, 9, 11, 13]))//12
+        console.log(triplets([1, 4, 5], [2, 3, 3], [1, 2, 3]))//5
+        console.log(triplets([1, 3, 5], [2, 3], [1, 2, 3]))//8
+        //all test case passed
+        function triplets2(a, b, c) {
+            const unicSort = (arr) => [...new Set(arr)].sort((x, y) => x - y);
+            a = unicSort(a);
+            b = unicSort(b);
+            c = unicSort(c);
+            for (var p = 0, q = 0, r = 0, ans = 0; q < b.length; q++) {
+                while (a[p] <= b[q]) p++;
+                while (c[r] <= b[q]) r++;
+                ans += p * r;
+            }
+            return ans;
+        }
+        console.log(triplets2([1, 3, 5, 7], [5, 7, 9], [7, 9, 11, 13]))//12
+        console.log(triplets2([1, 4, 5], [2, 3, 3], [1, 2, 3]))//5
+        console.log(triplets2([1, 3, 5], [2, 3], [1, 2, 3]))//8
 
     </script>
 
