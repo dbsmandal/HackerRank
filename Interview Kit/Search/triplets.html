@@ -55,6 +55,43 @@
         console.log(triplets2([1, 4, 5], [2, 3, 3], [1, 2, 3]))//5
         console.log(triplets2([1, 3, 5], [2, 3], [1, 2, 3]))//8
 
+        
+        function triplets3(a, b, c) {
+            const A = a.sort((a, b) => a - b);
+            const B = b.sort((a, b) => a - b);
+            const C = c.sort((a, b) => a - b);
+
+            const ha = {};
+            const hb = {};
+            const hc = {};
+
+            let ai = 0, bi = 0, ci = 0, count_a = 0, count_b = 0, count_c = 0;
+            let count = 0;
+
+            while (bi < B.length) {
+                if (!hb[B[bi]]) {
+                    while (ai < A.length && A[ai] <= B[bi]) {
+                        if (!ha[A[ai]]) {
+                            ha[A[ai]] = 1;
+                            count_a++;
+                        }
+                        ai++;
+                    }
+                    while (ci < C.length && C[ci] <= B[bi]) {
+                        if (!hc[C[ci]]) {
+                            hc[C[ci]] = 1;
+                            count_c++;
+                        }
+                        ci++;
+                    }
+                    count += count_c * count_a;
+                    hb[B[bi]] = 1
+                }
+                bi++;
+            }
+            return count;
+
+        }
     </script>
 
 </body>
