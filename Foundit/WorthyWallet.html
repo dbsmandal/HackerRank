@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div>
+        Bob recently started investing in stocks. There are N stocks in the market, Each stock has some price and risk factor associated with it. Alice, who is the financial advisor of Bob, told him that his wallet's worth will be negative if it contains two stocks (i,j) such that the price of the ith stock >= price of the jth stock; and risk factor of the ith stock >= risk factor of the jth stock.
+
+Since Bob struggles with math, he is seeking you for assistance in calculating the total number of ways he can add stocks to his wallet while ensuring that the wallet contains at least one stock and that its worth is not negative.
+
+Task : 
+
+Find the total number of ways to add stocks in the wallet such that it’s worth is not negative.
+
+Examples - 
+
+Assumptions : 
+
+N = 3
+Price = [ 50, 40, 40]
+
+Risk = [ 40, 40, 50]
+
+Way 1 - add only 1st stock in the wallet.
+
+Way 2 - add only 2nd stock in the wallet.
+
+Way 3 - add only 3rd stock in the wallet.
+
+Way 4 - add both 1st and 3rd stock in the wallet.
+
+So there are 4 possible ways.
+
+Function description - 
+
+Complete the WorthyWallet() function provided in the editor. This function takes the following 3 parameters and returns a long long integer as answer.
+
+N : Total number of stocks.
+P : An array of N integers where ith integer represents the price of ith stock.
+R : An array of N integers where ith integer represents the risk factor of ith stock.
+
+Input - 
+Note: This is the input format that you must use to provide custom input (available above the Compile and Test button).
+
+First Line contains an integer N representing the total number of stocks.
+Second line contains N integers where the ith integer represents the price of ith stock.
+Thir
+d Line contains N integers where ith integer represents the risk factor of ith stock.
+
+Output - 
+
+Find the total number of ways to add stocks in the wallet such that it’s worth is not negative..Since the answer can be large, output the answer modulo 1000000007.
+
+Constraints -
+1 <= N <= 105
+
+1 < Pi,Ri <= 105
+
+No two stocks have the same price and risk factor.
+    </div>
+</body>
+</html>

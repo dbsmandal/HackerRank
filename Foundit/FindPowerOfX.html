@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //given an Inetger N.
+        //if X Power of Y ===N  || Y power of X===N return {{X,Y},}
+
+        // example
+
+        //let N=16;
+        //Ans= {{2^4,4^2},{4^4},{16^1}}
+
+
+        function powerOf(N) {
+            
+            let count = 1;
+            let ans = [ [N, 1]]
+            if(N<=1){
+                return ans
+            }
+            for (let i = 1; i <= Math.sqrt(N); i++) {
+                for (let j = 1; j <= Math.sqrt(N); j++) {
+                    if (Math.pow(i, j) == N) {
+                        count++;
+                        ans.push( [i, j] )
+
+                    }
+                }
+            }
+            return ans
+
+        }
+        console.log(powerOf(1));
+        console.log(powerOf(125))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
