@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kaprekarNumbers</title>
+    <script>
+        let QNA_LINK = "https://www.hackerrank.com/challenges/kaprekar-numbers/problem?isFullScreen=true";
+
+        function kaprekarNumbers(p, q) {
+
+
+            let ans = [];
+            for (let i = p; i <= q; i++) {
+                let arr = [];
+                arr.push(Math.pow(i, 2));
+                let num = Math.floor((arr.join(",").length) / 2);
+                let left = (arr.join(",").slice(0, num));
+                let right = (arr.join(",").slice(num))
+                if (left - +-right == Math.sqrt(arr)) {
+                    ans.push(i)
+                }
+
+            }
+
+            if (ans.length === 0) {
+                console.log("INVALID RANGE")
+            } else {
+                console.log(...ans)
+            }
+
+
+        }
+        console.log(kaprekarNumbers(100, 300));
+        console.log(kaprekarNumbers(1, 100))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
