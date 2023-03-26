@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        let QNA_LINK = `https://www.hackerrank.com/challenges/happy-ladybugs/problem`;
+
+        function happyLaddybugs(b) {
+            let allBugsArr = [...b];
+            let unicBugsArr = [...new Set(allBugsArr)];
+
+            //handle with 'AABBC' ||  'AABCBC' || 'AAAA' || 'AABBCC'
+
+            if (!unicBugsArr.includes("_")) {
+                for (let i = 0; i < allBugsArr.length; i++) {
+                    //'AABBC' ||  'AABCBC'
+                    if (allBugsArr[i - 1] !== allBugsArr[i] && allBugsArr[i] !== allBugsArr[i + 1]) {
+                        return "NO"
+                    }
+                }
+                //'AAAA' || 'AABBCC'
+                return "YES"
+            } else {
+                // handle with "X_Y__X" || "RBY_YBR" || "B_RRBR" ||"__" || "_"
+
+                for (let char of unicBugsArr) {
+                    // for all "_" removes and check rest char.length>=2
+                    if (char !== "_") {
+                        if (allBugsArr.filter((bugs) => bugs === char).length === 1) {
+                            return "NO"
+                        }
+                    }
+
+                }
+                return "YES"
+            }
+
+
+        }
+
+        console.log(happyLaddybugs("--"))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
