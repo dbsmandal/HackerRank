@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majority Element </title>
+    <script>
+        let QNA_LINK = "https://www.interviewbit.com/problems/majority-element/";
+
+        //Given an array of size N, find the majority element. The majority element is the element that appears more than floor(N/2) times.
+        // You may assume that the array is non-empty and the majority element always exist in the array.
+
+
+        function majorityElement(A) {
+            let obj = {};
+            for (let el of A) {
+                if (!obj[el]) {
+                    obj[el] = 0;
+
+                }
+                obj[el]++;
+            }
+            for (let key in obj) {
+                if(obj[key]>=Math.floor(A.length/2)){
+                    return key
+                }
+            }
+
+
+        }
+        console.log(majorityElement([2, 1, 2, 5, 5, 5, 4, 5,6]))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
