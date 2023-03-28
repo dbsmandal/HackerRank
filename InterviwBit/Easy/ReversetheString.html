@@ -19,7 +19,19 @@
             return ans.join(' ');
 
         }
-        console.log(reverseString("          hello       world "))
+        console.log(reverseString("          hello       world "));
+
+
+
+        function reverseString2(A) {
+
+            let str = A.replace(/\s+/g, " ");//replace extra space in single space
+            let arr = str.split(' ')//divide each word 
+            let newArr = arr.reverse().join(' ')//reverse each word and join
+            return newArr
+
+        }
+        console.log(reverseString2("          hello       world "))
     </script>
 </head>
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Sum Contiguous Subarray</title>
+    <script>
+        let QNA_LINK = "https://www.interviewbit.com/problems/max-sum-contiguous-subarray/?study_plan=study-plan-1-week&/";
+
+        function maxSumofArray(A) {
+            let sum = 0;
+            let maxSum = -Infinity;
+            for (let j = 0; j < A.length; j++) {
+                sum += A[j];
+                if (sum > maxSum) {
+                    maxSum = sum
+                }
+                if (sum < 0) {
+                    sum = 0
+                }
+
+            }
+            return maxSum
+        }
+        console.log(maxSumofArray([1, 2, 3, 4, -10]));
+        console.log(maxSumofArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

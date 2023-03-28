@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanced Parantheses!</title>
+    <script>
+        let QNA_LINK = "https://www.interviewbit.com/problems/balanced-parantheses/?study_plan=study-plan-1-week&/";
+
+        function balancedParenthesis(A) {
+            let count = 0;
+            if (A[0] !== '(') {
+                return 0
+            }
+            for (let el of A) {
+                if (el === '(') {
+                    count++;
+                } else {
+                    count--;
+                }
+            }
+            if (count == 0) {
+                return 1
+            } else {
+                return 0
+            }
+
+        }
+        console.log(balancedParenthesis("(()())"));
+        console.log(balancedParenthesis("(()"));
+        console.log(balancedParenthesis(")))"))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
