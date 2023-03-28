@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse the String</title>
+    <script>
+        let QNA_LINK = "https://www.interviewbit.com/problems/reverse-the-string/?study_plan=study-plan-1-week&/";
+
+        function reverseString(A) {
+
+            let str = A.replace(/\s+/g, ' ').split(' ');
+            let ans = [];
+            for (let i = str.length - 1; i >= 0; i--) {
+                ans.push(str[i])
+            }
+            return ans.join(' ');
+
+        }
+        console.log(reverseString("          hello       world "))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

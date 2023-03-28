@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let QNA_LINK="https://www.interviewbit.com/problems/generate-all-parentheses/submissions/";
+
+
+        
+        function generateAllVallidParanthesis(A) {
+            let arr = [...A]
+            let stack = [];
+            for (let i = 0; i < arr.length; i++) {
+
+                let openBracket = arr[i];
+                if (openBracket === "(" || openBracket === "{" || openBracket === "[") {
+                    // console.log(`openBracket is ${openBracket}`)
+                    stack.push(openBracket);
+
+                }
+                else {
+                    let closeBracket = arr[i];
+                    let lastStack = stack.pop()
+
+                    // console.log(`closeBracket is ${closeBracket} and stack is ${stack} and lastStack is ${lastStack}`)
+
+                    if (!(lastStack === "(" && closeBracket === ")" || lastStack === "{" && closeBracket === "}" || lastStack === "[" && closeBracket === "]")) {
+                        return 0
+
+                    }
+                }
+
+            }
+            if (stack.length === 0) {
+                return 1
+            } else {
+                return 0
+            }
+
+
+        }
+        console.log(generateAllVallidParanthesis("[{"))//0
+        console.log(generateAllVallidParanthesis("([)]"))//0
+
+        console.log(generateAllVallidParanthesis("()[]{}"))//1
+        console.log(generateAllVallidParanthesis("((((([{()}[]]{{{[]}}})))))"))//1
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
