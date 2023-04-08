@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Absolute Difference</title>
+    <script>
+        let QNA_LINK = "https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=greedy-algorithms";
+
+    
+
+        function minimumAbsolutedifference2(arr) {
+            let sortArr = arr.sort((a, b) => a - b)
+            let difArr = []
+            let diff = 0;
+            for (let i = 0; i < sortArr.length-1; i++) {
+                    diff = Math.abs(sortArr[i] - sortArr[i+1])
+                    difArr.push(diff)
+
+            }
+            let ans = Math.min(...difArr);
+            return ans;
+
+
+        }
+        console.log(minimumAbsolutedifference2([-59, -36, -13, 1, -53, -92, -2, -96, -54, 75]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
