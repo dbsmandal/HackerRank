@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greedy Florist</title>
+    <script>
+        let QNA_Link = "https://www.hackerrank.com/challenges/greedy-florist/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=greedy-algorithms&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen";
+
+        function getMinimumCost(k, c) {
+            let minCost = 0;
+            let i = c.length - 1;
+            let multiplyier = 1;
+            let temp = k;
+            while (i >= 0) {
+                if (temp === 0) {
+                    multiplyier++;
+                    temp = k;
+                }
+
+                minCost += multiplyier * c[i];
+                temp--;
+                i--;
+            }
+
+            return minCost
+
+        }
+
+        console.log(getMinimumCost(3, [2, 5, 6]));//13
+        console.log(getMinimumCost(2, [2, 5, 6]));//15
+        console.log(getMinimumCost(3, [1, 3, 5, 7, 9]));//29
+
+        function getMinimumCost2(k, c) {
+           let arr= c.sort((x, y) => x - y);
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                total += arr[arr.length - 1 - i] * (Math.floor(i / k) + 1);
+            }
+            return total;
+
+        }
+        console.log(getMinimumCost2(3, [2, 5, 6]));//13
+        console.log(getMinimumCost2(2, [2, 5, 6]));//15
+        console.log(getMinimumCost2(3, [1, 3, 5, 7, 9]));//29
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
