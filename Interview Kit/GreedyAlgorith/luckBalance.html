@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luckBalance</title>
+    <script>
+        let QNA_LINK = "https://www.hackerrank.com/challenges/luck-balance/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=greedy-algorithms&h_r=next-challenge&h_v=zen";
+
+        function luckBalance(k, contests) {
+            // Write your code here
+            let important=[];
+            let notImportant=[]
+            function sum(arr){
+                if(arr.length===0){
+                    return 0
+                }
+                return arr.reduce((a,b)=>a+b)
+            }
+            for (let i = 0; i < contests.length; i++) {
+
+                if (contests[i][1] == 1) {
+                    important.push(contests[i][0])
+                   
+                }else{
+                    notImportant.push(contests[i][0])
+                }
+                
+            }
+            let importantSort=important.sort((a,b)=>b-a);
+            let LosImportantSort=importantSort.splice(0,k);
+
+            let luck = sum(LosImportantSort)+sum(notImportant)-sum(importantSort)
+            
+            return luck;
+        }
+        console.log(luckBalance(3,[[5, 1], [2, 1], [1, 1], [8, 1], [10, 0], [5, 0]]));//29
+        console.log(luckBalance(5, [[13, 1], [10, 1],[9, 1], [8, 1],[13, 1], [12, 1],[18, 1], [13, 1]]));//42
+        console.log(luckBalance(2,[[5, 1], [4, 0], [6, 1], [2, 1], [8, 0]]));//21
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
