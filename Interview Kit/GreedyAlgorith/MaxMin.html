@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Min</title>
+    <script>
+        let QNA_LINK = "https://www.hackerrank.com/challenges/angry-children/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=greedy-algorithms&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen";
+
+
+        function maxMin(k, arr) {
+            // Write your code here
+           let sortArr= arr.sort((a, b) => a - b);
+            let i=-1; 
+            let j=k-2;
+            let minUnfairness=sortArr[sortArr.length-1];
+
+            while(j<sortArr.length-1){
+                i++;
+                //initially i is -1 but when i increase then sortArr[i] value will be aoumativaly min value of sub arr becase we are already sort the main arr;
+                //initially j position is second last element of subArr but when j increase at the same time j is also come up to the correct postion it means last element of subArr thats is maximum value of this subArr
+                j++;
+                let minArr=sortArr[i];
+                let maxArr=sortArr[j];
+
+                minUnfairness=Math.min(minUnfairness,(maxArr-minArr))
+            }
+            return minUnfairness;
+           
+        }
+        console.log(maxMin(3, [10, 100, 300, 200, 1000, 20, 30]));//20
+        console.log(maxMin(4, [1, 2, 3, 4, 10, 20, 30, 40, 100, 200]));//3
+        console.log(maxMin(2, [1, 2, 1, 2, 1]));//0
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
