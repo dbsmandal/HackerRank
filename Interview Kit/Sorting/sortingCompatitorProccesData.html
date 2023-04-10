@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procces data</title>
+    <script>
+
+        let QNA_LINK = "https://www.hackerrank.com/challenges/ctci-comparator-sorting/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%"
+
+        function processData(input) {
+            //Enter your code here
+
+            let arr = input.split("\n").join(" ").split(" ");
+            let n = arr[0];
+            arr.shift();
+            let values = [];
+            let names = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (i % 2 == 0 || i == 0) {
+                    names.push(arr[i]);
+                }
+                if (i % 2 == 1) {
+                    values.push(parseInt(arr[i]));
+                }
+            }
+            let new_arr = []
+            let mini_arr = []
+            for (let j = 0; j < values.length; j++) {
+                mini_arr.push(names[j]);
+                mini_arr.push(values[j]);
+                new_arr.push(mini_arr);
+                mini_arr = [];
+            }
+            values.sort(function (a, b) { return a - b })
+            values.reverse();
+            new_arr.sort();
+            new_arr.sort(function (a, b) { return b[1] - a[1] });
+            for (let k = 0; k < new_arr.length; k++) {
+                console.log(new_arr[k][0] + " " + new_arr[k][1].toString())
+            }
+
+        }
+        console.log(processData([{ name: 'amy', score: 100 }, { name: 'dipak', score: 100 }, { name: 'david', score: 100 }, { name: 'heraldo', score: 50 }, { name: 'aakansha', score: 75 }, { name: 'aleksa', score: 150 },]))
+
+
+        function processData2(input) {
+            //Enter your code here
+
+            let sortByScore = input.sort((a, b) => {
+                return b.score - a.score
+            });
+            for (let el of sortByScore) {
+                console.log(el.score);
+                if (el.score === el.score) {
+                    sortByScore.sort((a, b) => {
+                        return a.name - b.name
+                    })
+                }
+            }
+            // let sortByName = sortByScore.sort((a, b) =>{
+            //     return a.name.length-b.name.length
+            // })
+            console.log("score", sortByScore)
+            // console.log("name",sortByName)
+
+
+        }
+        console.log(processData2([{ name: 'amy', score: 100 }, { name: 'dipak', score: 100 }, { name: 'david', score: 100 }, { name: 'heraldo', score: 50 }, { name: 'aakansha', score: 75 }, { name: 'aleksa', score: 150 },]))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

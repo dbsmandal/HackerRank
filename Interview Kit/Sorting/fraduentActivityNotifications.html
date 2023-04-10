@@ -7,6 +7,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let QNA_LINK = "https://www.hackerrank.com/challenges/fraudulent-activity-notifications/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=sorting"
+
+        function activityNotifications(expenditure, d) {
+            // Write your code here
+            const RANGE = 201
+            let notifications = 0
+            const getDoubleMedian = (count, d) => {
+                const N = count.length
+                const countPrefix = Array.from(count)
+                for (let i = 0; i < N; i++) {
+                    countPrefix[i] += countPrefix[i - 1] || 0
+                }
+                let a = 0
+                let b = 0
+
+                // only need the middle elements, so skip build the array to avoid TLE
+                if (d % 2 === 0) {
+                    let first = Math.floor(d / 2)
+                    let second = first + 1
+                    let i = 0
+                    for (; i < RANGE; i++) {
+                        if (first <= countPrefix[i]) {
+                            a = i
+                            break
+                        }
+                    }
+                    for (; i < RANGE; i++) {
+                        if (second <= countPrefix[i]) {
+                            b = i
+                            break
+                        }
+                    }
+                } else {
+                    let first = Math.floor(d / 2) + 1
+                    for (let i = 0; i < RANGE; i++) {
+                        if (first <= countPrefix[i]) {
+                            a = i
+                            b = i
+                            break
+                        }
+                    }
+                }
+
+                return a + b
+            }
+
+            //
+            const count = Array(RANGE).fill(0)
+            for (let i = 0; i < d; i++) {
+                count[expenditure[i]]++
+            }
+
+            for (let i = d; i < expenditure.length; i++) {
+                const median = getDoubleMedian(count, d)
+                if (expenditure[i] >= median) {
+                    notifications++
+                }
+
+                // update el count table
+                count[expenditure[i]]++
+                count[expenditure[i - d]]--
+            }
+
+            return notifications
+        }
+
+
+
+
+
+
+
+
+
+
         function activityNotifications(expenditure, d) {
             // Write your code here
             let notifications = 0;
@@ -17,7 +92,7 @@
                 for (let j = i; j < d + i; j++) {
                     dArr.push(expenditure[j])
                 }
-                dArr.sort((a,b)=>a-b)
+                dArr.sort((a, b) => a - b)
                 let midIndex = Math.floor(d / 2);
                 if (d % 2 != 0) {
                     median = dArr[midIndex]
@@ -25,17 +100,58 @@
                     median = (dArr[midIndex] + dArr[midIndex - 1]) / 2
                 }
                 // console.log(`dArr is ${dArr} \n  median is ${median} \n expenditure[d + i] is ${expenditure[d + i]} \n median*2 is ${median * 2}`)
-                dArr = []
+                dArr = [];
                 if (expenditure[d + i] >= median * 2) {
-                    notifications += 1
+                    notifications++;
                 }
             }
-
             return notifications
         }
         console.log(activityNotifications([2, 3, 4, 2, 3, 6, 8, 4, 5], 5))
-        // console.log(activityNotifications([10, 20, 30, 40, 50], 3))
-        // console.log(activityNotifications([1, 2, 3, 4, 4], 4))
+        console.log(activityNotifications([10, 20, 30, 40, 50], 3))
+        console.log(activityNotifications([1, 2, 3, 4, 4], 4))
+
+
+
+
+        function mergesort(arr) {
+            if (arr.length < 2) {
+                return arr
+            }
+            const mid = Math.floor(arr.length / 2)
+            const leftArr = arr.slice(0, mid)
+            const rightArr = arr.slice(mid)
+            return merge(mergesort(leftArr), mergesort(rightArr))
+        }
+
+        function merge(leftArr, rightArr) {
+            const sortedArr = []
+            while (leftArr.length && rightArr.length) {
+                if (leftArr[0] <= rightArr[0]) {
+                    sortedArr.push(leftArr.shift())
+                } else {
+                    sortedArr.push(rightArr.shift())
+                }
+            }
+            const resultArr = [...sortedArr, ...leftArr, ...rightArr]
+            return resultArr
+        }
+
+        const arr = [8, 20, -2, 4, -6]
+        console.log(mergesort(arr)) // [-6, -2, 4, 8, 20]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </head>

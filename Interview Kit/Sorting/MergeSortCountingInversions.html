@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort: Counting Inversions</title>
+    <script>
+        let QNA_LINK="https://www.hackerrank.com/challenges/ctci-merge-sort/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=sorting"
+        function countInversions(arr) {
+            // Write your code here
+            function mergeAndCount(arr, l, m, r) {
+                // Left subarray
+                let left = [];
+
+                for (let i = l; i < m + 1; i++) {
+                    left.push(arr[i]);
+                }
+
+                // Right subarray
+                let right = [];
+
+                for (let i = m + 1; i < r + 1; i++) {
+                    right.push(arr[i]);
+                }
+
+                let i = 0, j = 0, k = l, swaps = 0;
+                while (i < left.length &&
+                    j < right.length) {
+                    if (left[i] <= right[j]) {
+                        arr[k++] = left[i++];
+                    }
+                    else {
+                        arr[k++] = right[j++];
+                        swaps += (m + 1) - (l + i);
+                    }
+                }
+                while (i < left.length) {
+                    arr[k++] = left[i++];
+                }
+
+                while (j < right.length) {
+                    arr[k++] = right[j++];
+                }
+                return swaps;
+            }
+            function mergeSortAndCount(arr, l, r) {
+                let count = 0;
+                if (l < r) {
+                    let m = Math.floor((l + r) / 2);
+                    count += mergeSortAndCount(arr, l, m);
+                    count += mergeSortAndCount(arr, m + 1, r);
+                    count += mergeAndCount(arr, l, m, r);
+                }
+                return count;
+            }
+            return mergeSortAndCount(arr, 0, arr.length - 1);
+        }
+        console.log(countInversions([7, 5, 3, 1]))
+        console.log(countInversions([2, 1, 3, 1, 2]))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
