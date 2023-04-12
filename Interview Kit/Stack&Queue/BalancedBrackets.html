@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balanced Brackets</title>
+    <script>
+        let QNA_LINK = "https://www.hackerrank.com/challenges/balanced-brackets/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=stacks-queues";
+
+
+        function isBalanced(s) {
+            // Write your code here
+            let arr = [...s]
+            let stack = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == "(" || arr[i] == "{" || arr[i] == "[") {
+                    stack.push(arr[i]);
+                } else {
+
+                    let lastStack = stack.pop();
+                    if (!(lastStack == "(" && arr[i] === ")" || lastStack == "{" && arr[i] === "}" || lastStack == "[" && arr[i] === "]")) {
+                        return "NO"
+                    }
+
+                }
+            }
+            
+            if (stack.length === 0) {
+                return "YES"
+
+            } else {
+                return "NO"
+
+            }
+
+
+        }
+
+        console.log(isBalanced("{[()]}"));
+        console.log(isBalanced("{[(])}"));
+        console.log(isBalanced("{{[[(())]]}}"));
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
